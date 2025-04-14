@@ -1,13 +1,14 @@
-import AddTask from "./components/AddTask";
 import Header from "./components/Header";
-import ShowTask from "./components/ShowTask";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   return (
-    <div>
+    <>
+      <ThemeProvider>
       <Header />
+      </ThemeProvider>
    
-    </div>
+    </>
   );
 }
 

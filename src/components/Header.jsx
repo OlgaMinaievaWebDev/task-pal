@@ -1,8 +1,12 @@
 import logo from "../assets/logo.webp";
 import { FaSun } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext";
 
 function Header() {
+
+ const { theme, toggleTheme } = useTheme()
+ 
   return (
     <header className="flex justify-between items-center h-[72px] px-4 bg-gray-800 dark:bg-gray-900 text-white shadow-md">
       {/* Logo and Title Section */}
@@ -12,10 +16,13 @@ function Header() {
       </div>
 
       {/* Theme Toggle Section */}
-      <div className="flex items-center gap-6 text-2xl ml-auto cursor-pointer">
-        <FaSun className="transition-transform transform hover:scale-110" />
-        <FaMoon className="transition-transform transform hover:scale-110" />
-      </div>
+      <button className="text-2xl cursor-pointer" onClick={toggleTheme}>
+     {theme === 'light' ?
+      (<FaSun className="transition-transform transform hover:scale-110" />)
+      :
+      (<FaMoon className="transition-transform transform hover:scale-110" />)
+     }
+      </button>
     </header>
   );
 }
