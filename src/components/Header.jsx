@@ -17,11 +17,11 @@ function Header() {
 
       {/* Theme Toggle Section */}
       <button className="text-2xl cursor-pointer" onClick={toggleTheme}>
-     {theme === 'light' ?
-      (<FaSun className="transition-transform transform hover:scale-110" />)
-      :
-      (<FaMoon className="transition-transform transform hover:scale-110" />)
-     }
+        {theme === "light" ? (
+          <FaMoon className="transition-transform transform hover:scale-110" />
+        ) : (
+          <FaSun className="transition-transform transform hover:scale-110" />
+        )}
       </button>
     </header>
   );
