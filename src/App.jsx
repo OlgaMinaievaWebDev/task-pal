@@ -1,7 +1,13 @@
+import AddTask from "./components/AddTask";
+import Header from "./components/Header";
+import ShowTask from "./components/ShowTask";
+
 function App() {
   return (
     <div>
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
+      <Header />
+      <AddTask />
+      <ShowTask/>
     </div>
   );
 }
