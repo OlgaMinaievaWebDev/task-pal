@@ -14,7 +14,9 @@ function ShowTask() {
            Todo
          </span>
          <span className="text-sm text-gray-500 dark:text-gray-400">
-           0 tasks
+           {tasks.length === 0
+             ? "No tasks available"
+             : `${tasks.length} task${tasks.length > 1 ? "s" : ""} `}
          </span>
        </div>
        {tasks.length > 0 &&
