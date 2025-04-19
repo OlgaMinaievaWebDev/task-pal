@@ -1,7 +1,7 @@
 import logo from "../assets/logo.webp";
 import { FaSun } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
-import { useTheme } from "../context/ThemeContext";
+import useTheme from "../context/useTheme";
 
 function Header() {
   const { theme, toggleTheme } = useTheme();
@@ -27,7 +27,7 @@ function Header() {
         aria-label="Toggle theme"
       >
         {theme === "light" ? (
-          <FaMoon className="text-stone-300 hover:text-stone-100" />
+          <FaMoon className="hover:text-stone-100" />
         ) : (
           <FaSun className="text-amber-500 hover:text-amber-300" />
         )}
