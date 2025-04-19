@@ -2,7 +2,7 @@ function Button({children}) {
  return (
    <button
      type="submit"
-     className="px-6 py-4 border-2 border-amber-500 rounded-md bg-amber-400 text-md hover:bg-amber-500 transition transform hover:scale-105 active:scale-95 dark:text-black"
+     className="w-30  px-6 py-4 border-2 border-amber-500 rounded-md bg-amber-400 text-md hover:bg-amber-500 transition transform hover:scale-105 active:scale-95 dark:text-black"
    >
      {children}
    </button>
