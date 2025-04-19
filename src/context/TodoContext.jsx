@@ -27,9 +27,14 @@ const saveTasks = (newTasks) => {
 
  }
 
+ const removeTask = (id) => {
+  const newTasks = tasks.filter(task => task.id !== id)
+  saveTasks(newTasks);
+ }
+
  
  return (
-   <TodoContext.Provider value={{tasks, setTasks: saveTasks, addTask}}>
+   <TodoContext.Provider value={{tasks, setTasks: saveTasks, addTask, removeTask}}>
      {children}
    </TodoContext.Provider>
  );  
