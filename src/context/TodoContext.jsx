@@ -32,9 +32,15 @@ const saveTasks = (newTasks) => {
   saveTasks(newTasks);
  }
 
+ const deleteAllTasks = () => {
+  if(window.confirm("Are you sure you want to delete all tasks?")) {
+   saveTasks([]);
+  }
+ }
+
  
  return (
-   <TodoContext.Provider value={{tasks, setTasks: saveTasks, addTask, removeTask}}>
+   <TodoContext.Provider value={{tasks, setTasks: saveTasks, addTask, removeTask, deleteAllTasks}}>
      {children}
    </TodoContext.Provider>
  );  

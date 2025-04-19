@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import Button from "../ui/Button"
 
 import Task from "./Task";
+import TodoContext from "../context/TodoContext";
 
 function ShowTask() {
+  const {tasks, deleteAllTasks} = useContext(TodoContext)
  return (
    <section className="flex flex-col gap-4 p-4 max-w-2xl mx-auto">
      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 px-4 py-2 max-w-2xl mx-auto">
@@ -14,7 +17,9 @@ function ShowTask() {
            0 tasks
          </span>
        </div>
-       <Button>Clear All</Button>
+       {tasks.length > 0 &&
+         (<Button onClick={deleteAllTasks}>Clear All</Button>)
+       }
      </div>
      <ul className="space-y-4">
        <li>
