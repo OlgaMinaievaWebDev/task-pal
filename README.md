@@ -1,6 +1,6 @@
 # TaskPal - Modern Task Management Application 🚀
 
---**About **
+--**About**
 A todo list application with dark mode support and local storage persistence. Manage your tasks efficiently with intuitive controls and a clean interface.
 
 
