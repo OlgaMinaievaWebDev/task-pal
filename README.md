@@ -32,7 +32,7 @@ npm install
 npm run dev
    
 
-##Technologies Used 🔧
+## Technologies Used 🔧
 Frontend
 
 React (Vite)
