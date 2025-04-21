@@ -30,8 +30,9 @@ npm install
 3. Start the development server
   ```bash
 npm run dev
+   
 
-Technologies Used 🔧
+##Technologies Used 🔧
 Frontend
 
 React (Vite)
