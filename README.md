@@ -24,9 +24,11 @@ A todo list application with dark mode support and local storage persistence. Ma
    git clone https://github.com/yourusername/taskpal.git
 
 2. Install dependencies
+```bash
 npm install
 
 3. Start the development server
+```bash
 npm run dev
 
 Technologies Used 🔧
