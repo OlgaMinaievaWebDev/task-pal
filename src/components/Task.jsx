@@ -3,7 +3,7 @@ import { useContext } from "react";
 import TodoContext from "../context/TodoContext";
 
 function Task() {
-  const { tasks, removeTask } = useContext(TodoContext);
+  const { tasks, removeTask, startEditing } = useContext(TodoContext);
 
   return (
     <div className="space-y-4 mt-4">
@@ -21,8 +21,14 @@ function Task() {
             </span>
           </div>
           <div className="flex gap-4">
-            <Pencil className="text-amber-500 cursor-pointer hover:text-amber-600 transition" />
-            <Trash className="text-red-500 cursor-pointer hover:text-red-600 transition" onClick={()=>removeTask(task.id)} />
+            <Pencil
+              className="text-amber-500 cursor-pointer hover:text-amber-600 transition"
+              onClick={() => startEditing(task.id, task.text)}
+            />
+            <Trash
+              className="text-red-500 cursor-pointer hover:text-red-600 transition"
+              onClick={() => removeTask(task.id)}
+            />
           </div>
         </div>
       ))}

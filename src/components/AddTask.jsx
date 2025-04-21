@@ -1,26 +1,39 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Button from "../ui/Button";
 import TodoContext from "../context/TodoContext";
 
 function AddTask() {
- const [task, setTask] = useState("");
-const {addTask} = useContext(TodoContext);
+  const [localText, setLocalText] = useState("");
+  const {
+    addTask,
+    editTask,
+    editingTaskId,
+    editingTaskText,
+    startEditing,
+    cancelEditing,
+  } = useContext(TodoContext);
 
- const handleSubmit = (e) => {
-  e.preventDefault();
+  useEffect(() => {
+    setLocalText(editingTaskText || "");
+  }, [editingTaskId, editingTaskText]);
 
-  if (task.trim() === "") return;
-  
-  if(task.length > 25) {
-   alert("Task must be less than 25 characters")
-   return
-  }
- 
-  addTask(task)
-  setTask("");
- 
- }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const text = localText.trim();
 
+    if (!text) return;
+    if (text.length > 25) {
+      alert("Task must be less than 25 characters");
+      return;
+    }
+
+    if (editingTaskId) {
+      editTask(text);
+    } else {
+      addTask(text);
+      setLocalText("");
+    }
+  };
 
   return (
     <form
@@ -36,12 +49,31 @@ const {addTask} = useContext(TodoContext);
         name="task"
         autoComplete="off"
         maxLength={25}
-        value={task} // ← this line is missing
-        onChange={(e) => setTask(e.target.value)}
+        value={localText}
+        onChange={(e) => {
+          setLocalText(e.target.value);
+          if (editingTaskId) {
+            startEditing(editingTaskId, e.target.value);
+          }
+        }}
         className="w-full sm:w-auto flex-1 border-amber-500 rounded-md p-4 border-2 focus:outline-none focus:ring-1 focus:ring-red-400 dark:text-white dark:bg-zinc-800"
       />
 
-      <Button>Add</Button>
+      <div className="flex gap-2">
+        <Button type="submit">{editingTaskId ? "Save" : "Add"}</Button>
+        {editingTaskId && (
+          <Button
+            type="button"
+            onClick={() => {
+              cancelEditing();
+              setLocalText("");
+            }}
+            variant="secondary"
+          >
+            Cancel
+          </Button>
+        )}
+      </div>
     </form>
   );
 }
