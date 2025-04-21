@@ -1,12 +1,61 @@
-# React + Vite
+# TaskPal - Modern Task Management Application 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+A todo list application with dark mode support and local storage persistence. Manage your tasks efficiently with intuitive controls and a clean interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+- **Task Management**
+  - Add new tasks with character limit (25 chars)
+  - Edit existing tasks
+  - Mark tasks as complete/incomplete
+  - Delete individual tasks
+  - Clear all tasks at once
+- **Dark/Light Theme** toggle with system persistence
+- **Local Storage** for data persistence
+- **Responsive Design** works on all screen sizes
+- **Clean UI** with intuitive controls
+- **Real-time Updates** without page reload
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Installation 💻
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/taskpal.git
+
+2. Install dependencies
+npm install
+
+3. Start the development server
+npm run dev
+
+Technologies Used 🔧
+Frontend
+
+React (Vite)
+
+Tailwind CSS
+
+Lucide React Icons
+
+React Context API
+
+Browser Local Storage
+
+
+Contributing 🤝
+Contributions are welcome! Please follow these steps:
+
+Fork the project
+
+Create your feature branch (git checkout -b feature/AmazingFeature)
+
+Commit your changes (git commit -m 'Add some AmazingFeature')
+
+Push to the branch (git push origin feature/AmazingFeature)
+
+Open a Pull Request
+
+License 📄
+Distributed under the MIT License. See LICENSE for more information.
+
