@@ -74,6 +74,16 @@ export const TodoProvider = ({ children }) => {
     cancelEditing();
   };
 
+ const completeTask = (id) => {
+   const updatedTasks = tasks.map((task) => {
+     if (task.id === id) {
+       return { ...task, completed: !task.completed };
+     }
+     return task;
+   });
+   saveTasks(updatedTasks);
+ };
+ 
   return (
     <TodoContext.Provider
       value={{
@@ -85,7 +95,8 @@ export const TodoProvider = ({ children }) => {
         deleteAllTasks,
         startEditing,
         cancelEditing,
-        editTask,
+     editTask,
+        completeTask,
       }}
     >
       {children}
